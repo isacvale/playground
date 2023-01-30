@@ -27,7 +27,7 @@ const StyledApp = styled.div(({backgroundUrl}) => ({
 
 const App = () => {
   const { displayImage } = useContextState();
-  const { title, url } = displayImage;
+  const { url } = displayImage;
 
   return (
     <StyledApp backgroundUrl={url} >
@@ -39,7 +39,9 @@ const App = () => {
   )
 }
 
-export default () =>
+const AppWithProvider = () =>
   <StateProvider>
     <App />
   </StateProvider>
+
+export default AppWithProvider;

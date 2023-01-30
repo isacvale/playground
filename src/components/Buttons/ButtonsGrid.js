@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 
 import useContextState from '../../hooks/useContextState';
 
-const StyledGrid = styled.div(({}) => ({ 
+const StyledGrid = styled.div({ 
   bottom: '6rem',
   display: 'flex',
   justifyContent: 'center',
   position: 'absolute',
   width: '100%',
-}))
+})
 
 const StyledButton = styled.button(({controlType}) => ({
   background: 'hsla(0, 0%, 0%, 0.4)',

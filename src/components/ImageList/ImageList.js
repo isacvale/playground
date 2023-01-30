@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 
 import useContextState from '../../hooks/useContextState'

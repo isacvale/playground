@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useReducer, useRef } from 'react'
+import React, { useContext, useEffect, useReducer } from 'react'
 
 import { NASA_API_KEY } from '../config'
 
@@ -23,19 +23,16 @@ const reducer = (state, {payload, type}) => {
         ...state,
         displayImage: payload,
       }
-      break
     case ACTIONS.LOAD_NEXT_IMAGE:
       return {
         ...state,
         imageList: [ ...state.imageList.slice(1, 12), ...payload ]
       }
-      break
     case ACTIONS.LOAD_PREVIOUS_IMAGE:
       return {
         ...state,
         imageList: [ ...payload, ...state.imageList ]
       }
-      break
     case ACTIONS.RESET_IMAGES:
       return {
         displayImage: {
@@ -44,7 +41,6 @@ const reducer = (state, {payload, type}) => {
         },
         imageList: [ ...payload ]
       }
-      break
     default:
       return state
   } 
@@ -74,7 +70,6 @@ export const StateProvider = ({ children }) => {
     imageList: [],
     displayImage: emptyDisplayImage,
   })
-  const ref = useRef(Math.random())
 
   const dispatch = async action => {
     const asyncActions = [ACTIONS.LOAD_NEXT_IMAGE, ACTIONS.LOAD_PREVIOUS_IMAGE, ACTIONS.RESET_IMAGES]
